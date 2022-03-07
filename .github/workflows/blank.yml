@@ -15,6 +15,6 @@ jobs:
       run: python -m pip install flake8
       run: python -m pip install lintly
     - name: Lint with flake8
-      run: flake8 | lintly
+      run: flake8 .
       env:
         LINTLY_API_KEY: ${{ secrets.GITHUB_TOKEN }}
