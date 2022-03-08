@@ -17,7 +17,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8==3.9.1 lintly==0.6.0
-        pip3 install --force-reinstall MarkupSafe==2.0.1
+        pip install --force-reinstall MarkupSafe==2.0.1
     - name: Generate linting report (flake8)
       run: |
         flake8 --max-line-length=160 --ignore=E101,E111,E114,E115,E116,E117,E12,E13,E2,E3,E401,E402,E5,E70,E712,F403,F405,F821,W1,W2,W3,W5 ./notebooks/ | lintly --use-checks --fail-on new --exit-zero --no-post-status --commit-sha ${{ github.event.pull_request.head.sha }}
